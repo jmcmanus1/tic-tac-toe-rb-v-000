@@ -27,7 +27,7 @@ def move(board, index, current_player)
 end
 
 def position_taken?(board, location)
-  board[location] != " " && board[location] != "" 
+  board[location] != " " && board[location] != ""
 end
 
 def valid_move?(board, index)
@@ -46,14 +46,6 @@ def turn(board)
   end
 end
 
-def play(board)
-  turn_count = 0
-  until turn_count == 9
-    turn(board)
-    turn_count += 1
-  end
-end
-
 def turn_count(board)
   turns = 0
   board.each do |value|
@@ -63,6 +55,16 @@ def turn_count(board)
   end
   turns
 end
+
+def play(board)
+  turn_count = 0
+  until turn_count == 9
+    turn(board)
+    turn_count += 1
+  end
+end
+
+
 
 def current_player(board)
   if turn_count(board)% 2 == 0
