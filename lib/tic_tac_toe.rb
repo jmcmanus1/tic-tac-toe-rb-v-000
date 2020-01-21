@@ -56,6 +56,14 @@ def turn_count(board)
   turns
 end
 
+def current_player(board)
+  if turn_count(board)% 2 == 0
+    "X"
+  else
+    "O"
+  end
+end
+
 def play(board)
   turn_count = 0
   until turn_count == 9
@@ -66,13 +74,7 @@ end
 
 
 
-def current_player(board)
-  if turn_count(board)% 2 == 0
-    "X"
-  else
-    "O"
-  end
-end
+
 
 def won?(board)
   WIN_COMBINATIONS.detect do |combo|
