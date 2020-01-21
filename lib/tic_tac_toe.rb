@@ -93,9 +93,7 @@ def winner(board)
 end
 
 def play(board)
-  turn_count = 0
-  until turn_count == 9
+  until over?(board) == true
     turn(board)
-    turn_count += 1
   end
 end
