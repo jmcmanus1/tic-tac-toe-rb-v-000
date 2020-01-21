@@ -6,27 +6,6 @@ def display_board(board)
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
 
-
-def turn_count(board)
-  turns = 0
-  board.each do |value|
-    if value == "X" || value == "O"
-      turns += 1
-    end
-  end
-  turns
-end
-
-def current_player(board)
-  if turn_count(board)% 2 == 0
-    "X"
-  else
-    "O"
-  end
-end
-
-
-
 def input_to_index(user_input)
   user_input.to_i - 1
 end
@@ -60,5 +39,23 @@ def play(board)
   until turn_count == 9
     turn(board)
     turn_count += 1
+  end
+end
+
+def turn_count(board)
+  turns = 0
+  board.each do |value|
+    if value == "X" || value == "O"
+      turns += 1
+    end
+  end
+  turns
+end
+
+def current_player(board)
+  if turn_count(board)% 2 == 0
+    "X"
+  else
+    "O"
   end
 end
